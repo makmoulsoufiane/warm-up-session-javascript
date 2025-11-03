@@ -48,3 +48,22 @@ search.addEventListener("input", (e) => {
   renderProjects(filteredProjects);
   console.log(filteredProjects);
 });
+
+
+search.addEventListener("input", (e) => {
+  const textseach = e.target.value;
+  const filteredProjects = projects.filter((project) =>
+    project.title.toLowerCase().includes(textseach.toLowerCase())
+  );
+  renderProjects(filteredProjects);
+  console.log(filteredProjects);
+});
+
+
+const toggleTheme = document.createElement("button");
+toggleTheme.textContent = "Changer de thème";
+document.body.prepend(toggleTheme);
+
+toggleTheme.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+});
