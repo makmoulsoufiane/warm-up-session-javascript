@@ -1,5 +1,5 @@
 let projects = JSON.parse(localStorage.getItem("projects")) || [
-  { id: 1, title: "Site E-commerce", tech: "HTML, CSS, JS", likes: 10 },
+  { id: 1, title: "Site E-commerce pp", tech: "HTML, CSS, JS", likes: 10 },
   { id: 2, title: "App Météo", tech: "JavaScript, API", likes: 5 },
   { id: 3, title: "Portfolio React", tech: "React, Tailwind", likes: 12 },
 ];
@@ -34,4 +34,17 @@ projectsList.addEventListener("click", (e) => {
     renderProjects(projects);
     localStorage.setItem("projects", JSON.stringify(projects));
   }
+});
+
+
+
+
+
+search.addEventListener("input", (e) => {
+  const textseach = e.target.value;
+  const filteredProjects = projects.filter((project) =>
+    project.title.toLowerCase().includes(textseach.toLowerCase())
+  );
+  renderProjects(filteredProjects);
+  console.log(filteredProjects);
 });
