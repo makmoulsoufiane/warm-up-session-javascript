@@ -1,0 +1,47 @@
+// function createRecord(table, data){
+//   return {
+//     table,
+//     data,
+//     save() {
+//       console.log(`${table} ${data.username}`);
+
+//       return `${table} ${data.username}`;
+//     }
+//   }
+
+// }
+
+
+// const user1 = createRecord("users",{username:"soufiane",id:1});
+// user1.save(); // soufiane add to table users
+
+// ------------------------------
+
+// function BaseModel(tableName) {
+//   this.tableName = tableName;
+//   this.records = [];
+
+//   // Method to add a new record
+//   this.create = function(data) {
+//     this.records.push(data);
+//     return data;
+//   };
+
+//   // Method to find a record by ID
+//   this.find = function(id) {
+//     return this.records.find(record => record.id === id);
+//   };
+// }
+
+// // Create a model instance
+// let user1 = new BaseModel("orders");
+
+// // Add records
+// user1.create({ id: 2, name: "Soufiane", email: "makmoul@example.com", age: 25 });
+// user1.create({ id: 1, name: "Amal", email: "amal@example.com" });
+
+// // Access the records array
+// console.log(user1.records);
+
+// // Find a specific record by id
+// console.log(user1.find()); // 👉 { id: 1, name: "Amal", email: "amal@example.com" }
